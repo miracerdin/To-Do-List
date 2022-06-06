@@ -8,10 +8,7 @@ button.addEventListener("click", addtToList);
 input.addEventListener("keypress", function (event) {
   // If the user presses the "Enter" key on the keyboard
   if (event.key === "Enter") {
-    // Cancel the default action, if needed
-
     addtToList();
-    // Trigger the button element with a click
   }
 });
 
@@ -25,10 +22,12 @@ function addtToList() {
   if (input.value != "") {
     let element = document.createElement("div");
     element.classList.add("altdiv");
-    element.innerHTML = `<span>➡  </span>
-    <p>${input.value}</p><button class = "rmvBtn"> REMOVE</button>`;
+    element.innerHTML = `<input type = "checkbox"   />
+    <p>${input.value}</p><buttOn class = "rmvBtn"> REMOVE</button>`;
+
     list.appendChild(element);
     input.value = "";
+
     const parag = document.querySelector("p");
     let counter = 0;
     parag.addEventListener("click", (e) => {

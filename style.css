@@ -103,9 +103,8 @@ i {
 p {
   padding-right: 2rem;
   margin: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 60%;
+  word-wrap: break-word;
 }
 /* button {
   border-radius: 5px;
@@ -124,6 +123,7 @@ p {
   display: flex;
   align-items: center;
   padding-left: 10px;
+  border-bottom: 1px dashed rgb(85, 238, 123);
 }
 .rmvBtn {
   position: relative;

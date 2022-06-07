@@ -2,12 +2,13 @@ const input = document.getElementById("input");
 const button = document.getElementById("button");
 const list = document.getElementsByClassName("list")[0];
 const removeBtn = `<button> REMOVE</button>`;
+let index = 0;
 
 button.addEventListener("click", addtToList);
 
 input.addEventListener("keypress", function (event) {
   // If the user presses the "Enter" key on the keyboard
-  if (event.key === "Enter") {
+  if (event.keyCode === 13) {
     addtToList();
   }
 });
@@ -44,7 +45,11 @@ function addtToList() {
     element.classList.add("altdiv");
     element.innerHTML = `<input class="box" type = "checkbox"   />
     <p>${input.value}</p><div class="date">${shortDate}<button class = "rmvBtn"> REMOVE</button></div>`;
-
+    localStorage.setItem(index, input.value);
+    index++;
+    setTimeout(() => {
+      element.style.maxHeight = "500px";
+    }, 500);
     list.appendChild(element);
     input.value = "";
   } else {

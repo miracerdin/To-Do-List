@@ -71,19 +71,33 @@ function addtToList() {
     element.innerHTML = `<input class="box" type = "checkbox"   />
     <p>${input.value}</p><div class="date">${shortDate}<button class = "rmvBtn"> REMOVE</button></div>`;
     // localStorage.setItem(index, input.value);
+    let id1 = Math.floor(Math.random() * 10);
+    let datalist = JSON.parse(localStorage.getItem("todos"));
+    miro();
 
-    index++;
+    function miro() {
+      if (datalist.length > 0) {
+        let arr = datalist.filter((x) => x.id == id1);
+        if (arr.length != 0) {
+          id1 = Math.floor(Math.random() * 10);
+          return miro();
+        } else {
+          return id1;
+        }
+      }
+      return id1;
+    }
     let template = {
-      index,
+      id: id1,
       text: input.value,
       date: shortDate,
     };
-    let datalist = JSON.parse(localStorage.getItem("todos"));
 
     datalist.push(template);
     console.log(datalist);
 
     localStorage.setItem("todos", JSON.stringify(datalist));
+    console.log(datalist);
 
     list.appendChild(element);
 
@@ -98,3 +112,12 @@ const box = document.querySelectorAll(".box");
 
 // const checkBoxes = document.querySelectorAll("input[type='checkbox']:checked");
 // console.log(checkBoxes);
+
+function clarusway() {
+  if (true) {
+    var a = 5;
+  }
+  document.write(a);
+}
+
+console.log(clarusway());

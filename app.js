@@ -7,19 +7,22 @@ let index = 0;
 const startConf = () => {
   //baslangıç
   const todos = localStorage.getItem("todos");
-  if (!todos) {
-    localStorage.setItem("todos", JSON.stringify([]));
-    // console.log(todos);
-  } else {
-    let datalist = JSON.parse(localStorage.getItem("todos"));
-    datalist.forEach((e) => {
-      let element = document.createElement("div");
-      element.classList.add("altdiv");
-      element.innerHTML = `<input class="box" type = "checkbox"   />
-    <p>${e.text}</p><div class="date">${e.date}<button class = "rmvBtn"> REMOVE</button></div>`;
-      list.appendChild(element);
-    });
-  }
+  // if (!todos) {
+  //   localStorage.setItem("todos", JSON.stringify([]));
+  // console.log(todos);
+  // } else {
+  let datalist = JSON.parse(localStorage.getItem("todos")) || []; // dataliste eğer json parse içi doluysa yani true ise aktar ama yoksa [] yi aktar demek || oluyor.
+
+  datalist.forEach((e) => {
+    //? her bir todo objesini destructor yaptık
+    const { id, text, date } = e;
+    let element = document.createElement("div");
+    element.classList.add("altdiv");
+    element.innerHTML = `<input class="box" type = "checkbox"   />
+    <p>${text}</p><div class="date">${date}<button class = "rmvBtn"> REMOVE</button></div>`;
+    list.appendChild(element);
+  });
+  // }
 };
 
 startConf();

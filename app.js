@@ -116,11 +116,4 @@ const box = document.querySelectorAll(".box");
 // const checkBoxes = document.querySelectorAll("input[type='checkbox']:checked");
 // console.log(checkBoxes);
 
-function clarusway() {
-  if (true) {
-    var a = 5;
-  }
-  document.write(a);
-}
 
-console.log(clarusway());

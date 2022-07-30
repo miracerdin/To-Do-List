@@ -106,9 +106,3 @@ function addtToList() {
     alert("Please give me a to do.");
   }
 }
-
-// const box = document.querySelectorAll(".box");
-// console.log(box);
-
-// const checkBoxes = document.querySelectorAll("input[type='checkbox']:checked");
-// console.log(checkBoxes);

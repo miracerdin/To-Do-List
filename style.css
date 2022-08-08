@@ -114,17 +114,19 @@ p {
 .list {
   background-image: url(img/brick-wall-dark.png);
   background-color: rgba(143, 233, 221, 0.89);
-  padding: 50px;
+  /* padding: 50px; */
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
+
 .altdiv {
   display: flex;
   align-items: center;
   padding-left: 10px;
   border-bottom: 1px dashed rgb(85, 238, 123);
 }
+
 .rmvBtn {
   position: relative;
   right: auto;
@@ -142,3 +144,11 @@ p {
   margin-left: auto;
   margin-right: 0;
 }
+/* @media (max-width: 376px) {
+  .divlist {
+    padding: -500px;
+  }
+  .altdiv {
+    padding: 0px;
+  }
+} */
